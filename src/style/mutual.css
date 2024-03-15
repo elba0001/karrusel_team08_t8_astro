@@ -1,3 +1,5 @@
+/* mobile first */
+
 :root {
   --main-black-color: #000000;
   --main-Gray-color: #d9d9d9;
@@ -43,4 +45,9 @@ a {
   font-weight: 400;
   font-style: normal;
   color: var(--main-white-color);
+}
+
+/* desktop og tablets */
+
+@media only screen and (min-width: 600px) {
 }
