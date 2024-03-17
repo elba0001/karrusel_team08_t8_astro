@@ -2,8 +2,7 @@
 const {header} = Astro.props;
 ---
 
-<!-- I denne html skal der være komponenter, fx article  -->
-
+<article class="Card">
 <article>
     <!-- Header med logo, ticket og burgermenu -->
 </article>
@@ -56,6 +55,7 @@ const {header} = Astro.props;
 <article>
     <!-- Back to top knap -->
 </article>
+</article>
 
 <slot />
 
@@ -70,9 +70,12 @@ a {
     text-decoration: underline;
     color: #f8f8f8;
 }
-p {
+.about_artist, p {
     font-family: 'Times New Roman', Times, serif;
     font-size: 20px;
+    background-color: transparent;
+    padding: 5px;
+    margin-bottom: 20px;
 }
 
 h1 {
