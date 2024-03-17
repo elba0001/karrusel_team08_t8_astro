@@ -9,7 +9,13 @@ const {header} = Astro.props;
 </article>
 
 <article>
-    <!-- Brødkrummesti -->
+    <div class="breadcrumbs">
+        <a href="#">Home</a> /
+        <a href="#">Program</a> /
+        <a href="#">Thursday</a> /
+        <a href="#">Âme</a> /
+        Aktuel side
+    </div>
 </article>
 
 <article>
@@ -53,5 +59,8 @@ const {header} = Astro.props;
 <slot />
 
 <style>
-
+p {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+}
 </style>
