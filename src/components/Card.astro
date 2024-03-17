@@ -8,6 +8,7 @@ const {header} = Astro.props;
 </article>
 
 <article>
+    <!-- Skal brødkrummestien være en Navigation-komponent? -->
     <div class="breadcrumbs">
         <a href="#">Home</a> //
         <a href="#">Program</a> //
@@ -67,17 +68,16 @@ a {
 .breadcrumbs {
     font-family: 'Times New Roman', Times, serif;
     font-size: 12px;
-    text-decoration: underline;
+    text-decoration: none;
     color: #f8f8f8;
 }
 .about_artist, p {
     font-family: 'Times New Roman', Times, serif;
     font-size: 20px;
     background-color: transparent;
-    padding: 5px;
     margin-bottom: 20px;
+    padding: 5px;
 }
-
 h1 {
     font-family: "Rye", serif;
     font-size: 41px;
@@ -85,6 +85,8 @@ h1 {
 }
 h3 {
     font-size: 23px;
+    padding: 10px;
+    margin-bottom: 20px;
 }
 
 .left_info, .right_info {
@@ -95,11 +97,17 @@ h3 {
     margin: 0; 
 }
 
+
 .container {
     display: grid;
     grid-template-columns: 1fr 1fr; 
-    gap: 10px; 
+    gap: 5px; 
 }
+.container .right_info {
+    margin-bottom: 10px;
+    line-height: 2.3;
+}
+
 
 .left_info h3, .right_info p {
     margin: 0; 
