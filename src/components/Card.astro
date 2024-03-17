@@ -17,11 +17,9 @@ const {header} = Astro.props;
     </div>
 </article>
 
-<article>
-    <!-- H1 tekst ovenpå artistbillede -->
+<article class="fhero">
+    <img src="/public/img/ame.webp" alt="artistbillede">
     <h1>Âme</h1>
-    <h2>{header}</h2>
-    <img src="/public/img/ame.webp" alt="Artist">
 </article>
 
 <article class="container">
@@ -61,7 +59,7 @@ const {header} = Astro.props;
 
 <slot />
 
-
+<!-- Styling af Card -->
 <style>
 a {
      color: #f8f8f8;
@@ -80,13 +78,10 @@ p {
 h1 {
     font-family: "Rye", serif;
     font-size: 41px;
+    color: #f8f8f8;
 }
 h3 {
     font-size: 23px;
-}
-.container {
-    display: flex;
-    justify-content: space-between;
 }
 
 .left_info, .right_info {
@@ -106,4 +101,27 @@ h3 {
 .left_info h3, .right_info p {
     margin: 0; 
 }
+.fhero {
+    display: grid;
+    place-items: center;
+  }
+  img,
+  h1 {
+    grid-area: 1 / 1;
+  }
+  .fhero h1 {
+    font-family: "Rye", serif;;
+    font-size: 41px;
+    color: white;
+    letter-spacing: 4px;
+    text-align: center;
+    margin: 50px;
+    background-color: transparent;
+  }
+
+  .fhero img {
+    height: auto;
+    object-fit: cover;
+    width: 100%;
+  }
 </style>

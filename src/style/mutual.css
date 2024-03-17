@@ -28,7 +28,7 @@ main {
   margin: 0% 5%;
 }
 
-h1,
+/* h1, */
 h2 {
   color: var(--main-white-color);
   text-decoration: none;
@@ -39,8 +39,7 @@ h3,
 h4,
 h5,
 h6,
-p
-{
+p {
   font-family: "Rye", serif;
   font-weight: 400;
   font-style: normal;
