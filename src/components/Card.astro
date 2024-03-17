@@ -10,11 +10,10 @@ const {header} = Astro.props;
 
 <article>
     <div class="breadcrumbs">
-        <a href="#">Home</a> /
-        <a href="#">Program</a> /
-        <a href="#">Thursday</a> /
-        <a href="#">Âme</a> /
-        Aktuel side
+        <a href="#">Home</a> //
+        <a href="#">Program</a> //
+        <a href="#">Thursday</a> //
+        <a href="#">Âme</a>
     </div>
 </article>
 
@@ -25,23 +24,27 @@ const {header} = Astro.props;
     <img src="/public/img/ame.webp" alt="Artist">
 </article>
 
-<article>
+<article class="container">
+    <div class="left_info">
     <h3>Location</h3>
     <h3>Date</h3>
     <h3>Time</h3>
-</article>
+    </div>
 
-<article>
+    <div class="right_info">
     <p>Manegen</p>
     <p>Thursday // 24th Aug</p>
     <p>PM 19:30-20:30</p>
+    </div>
 </article>
 
 <article>
+    <div class="about_artist">
     <p>German house/techno duo consisting of Kristian Beyer and Frank Wiedemann.
         The duo started making tracks in 2001. 
         Beyer and Wiedemann first met in 2000 in Beyer's record shop in their hometown of Karlsruhe. </p>
     <p>As they both liked Chicago house and Detroit techno, they started to produce music together. Âme has released music for record labels such as Ostgut Ton and Sonar Kollektiv.</p>
+    </div>
 </article>
 
 <article>
@@ -58,9 +61,49 @@ const {header} = Astro.props;
 
 <slot />
 
+
 <style>
+a {
+     color: #f8f8f8;
+}
+.breadcrumbs {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 12px;
+    text-decoration: underline;
+    color: #f8f8f8;
+}
 p {
     font-family: 'Times New Roman', Times, serif;
     font-size: 20px;
+}
+
+h1 {
+    font-family: "Rye", serif;
+    font-size: 41px;
+}
+h3 {
+    font-size: 23px;
+}
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.left_info, .right_info {
+    flex: 1;
+}
+
+.left_info h3, .right_info p {
+    margin: 0; 
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 10px; 
+}
+
+.left_info h3, .right_info p {
+    margin: 0; 
 }
 </style>
