@@ -1,6 +1,6 @@
 ---
 import "../style/mutual.css";
-import "../components/Card.astro";
+import Card from "../components/Card.astro";
 ---
 
 <html lang="en">
@@ -16,12 +16,19 @@ import "../components/Card.astro";
 		<title>Karrusel Festival</title>
 	</head>
 
+	<!-- I denne html skal der være logo, curtains, countdown og dato -->
 	<body>
-		<button class="Logo.astro">Karrusel</button>
 		<main>
+			<Card />
+
+		<!-- 
 			<article>	
-				
+					<button class="Logo.astro">Karrusel</button>
 			</article>
+
+			<article>
+				<a href="/src/components/Icons/Countdown.astro"></a>
+			</article> -->
 		</main>
 	</body>
 </html>
