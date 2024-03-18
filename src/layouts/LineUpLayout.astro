@@ -1,0 +1,29 @@
+---
+import "../style/mutual.css";
+import MainLayout from "../layouts/MainLayout.astro";
+import Card from "../components/Card.astro";
+const {title}= Astro.props;
+---
+
+<MainLayout>
+	<slot>
+		<header>
+		<img src="/public/img/heder_img_thusday.webp" alt="header img for line up thusday">
+		<h1>{title}</h1>
+		<h2>Manegen</h2>
+		<section class="grid_cards">
+		</Card>
+		</section>
+		<h2>Tribunen</h2>
+		<h2>Balkonen</h2>
+		</header>
+	</slot>
+</MainLayout>
+
+<style>
+.grid_cards{
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 20px;
+}
+</style>
