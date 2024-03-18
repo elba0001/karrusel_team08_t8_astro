@@ -1,10 +1,10 @@
 ---
 import "../style/mutual.css";
-import "../layouts/MainLayout.astro";
+import LineUpLayout from "../layouts/LineUpLayout.astro";
+import Card from "../components/Card.astro";
+const {title}= Astro.props;
 ---
 
-<MainLayout>
-	<slot>
-		
-	</slot>
-</MainLayout>
+<LineUpLayout title="Line up thursday">
+
+</LineUpLayout>
