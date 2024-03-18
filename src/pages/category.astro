@@ -1,6 +1,7 @@
 ---
 import "../style/mutual.css";
 import Button from "../components/Buttons.astro"
+import MainLayout from "../layouts/MainLayout.astro";
 
 ---
 
@@ -13,7 +14,11 @@ import Button from "../components/Buttons.astro"
 		<title>Karrusel Festival</title>
 	</head>
 	<body>
-		<Button variant="primary" size="small">Text</Button>
+		<MainLayout>
+			<Button>
+				TEXT
+			</Button>
+		</MainLayout>
 
 	</body>
 </html>
