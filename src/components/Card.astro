@@ -1,138 +1,34 @@
 ---
-const {header} = Astro.props;
+import Buttons from "./Buttons.astro";
+
+const {data} = Astro.props;
 ---
 
-<article class="Card">
-<article>
-    <!-- Header med logo, ticket og burgermenu -->
-</article>
 
-<article>
-    <!-- Skal brødkrummestien være en Navigation-komponent? -->
-    <div class="breadcrumbs">
-        <a href="index">Home</a> //
-        <a href="category">Program</a> //
-        <a href="line_up_thursday">Thursday</a> //
-        <a href="single_view">Âme</a>
+    <article>
+<a href="single_view">
+    <div class="img_artist_lineup">
+      <slot>
+        <img class="artist_img" src={data.img} alt="#">
+      </slot>
     </div>
-</article>
+<h2 class="name">{data.Artist}</h2>
+<h3 class="info">Kl: {data.Timeslot}</h3>
+<h3>{data.Date}</h3>
+<h3>{data.Day}</h3>
+<Buttons variant="secondary"></Buttons>
+</a>
+    </article>
 
-<article class="fhero">
-    <img src="/public/img/ame.webp" alt="artistbillede">
-    <h1>Âme</h1>
-</article>
-
-<article class="container">
-    <div class="left_info">
-    <h3>Location</h3>
-    <h3>Date</h3>
-    <h3>Time</h3>
-    </div>
-
-    <div class="right_info">
-    <p>Manegen</p>
-    <p>Thursday // 24th Aug</p>
-    <p>PM 19:30-20:30</p>
-    </div>
-</article>
-
-<article>
-    <div class="about_artist">
-    <p>German house/techno duo consisting of Kristian Beyer and Frank Wiedemann.
-        The duo started making tracks in 2001. 
-        Beyer and Wiedemann first met in 2000 in Beyer's record shop in their hometown of Karlsruhe. </p>
-    <p>As they both liked Chicago house and Detroit techno, they started to produce music together. Âme has released music for record labels such as Ostgut Ton and Sonar Kollektiv.</p>
-    </div>
-</article>
-
-<article>
-    <!-- Artist Icons -->
-</article>
-
-<article>
-    <!-- Footer -->
-</article>
-
-<article>
-    <!-- Back to top knap -->
-</article>
-</article>
-
-<slot />
-
-<!-- Styling af Card -->
 <style>
-a {
-     color: #f8f8f8;
-}
-.breadcrumbs {
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 12px;
-    text-decoration: none;
-    color: #f8f8f8;
-}
-.about_artist, p {
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 20px;
-    background-color: transparent;
-    margin-bottom: 20px;
-    padding: 5px;
-}
-h1 {
-    font-family: "Rye", serif;
-    font-size: 41px;
-    color: #f8f8f8;
-}
-h3 {
-    font-size: 23px;
-    padding: 10px;
-    margin-bottom: 20px;
-}
-
-.left_info, .right_info {
-    flex: 1;
-}
-
-.left_info h3, .right_info p {
-    margin: 0; 
-}
-
-
-.container {
-    display: grid;
-    grid-template-columns: 1fr 1fr; 
-    gap: 5px; 
-}
-.container .right_info {
-    margin-bottom: 10px;
-    line-height: 2.3;
-}
-
-
-.left_info h3, .right_info p {
-    margin: 0; 
-}
-.fhero {
-    display: grid;
-    place-items: center;
-  }
-  img,
-  h1 {
-    grid-area: 1 / 1;
-  }
-  .fhero h1 {
-    font-family: "Rye", serif;;
-    font-size: 41px;
-    color: white;
-    letter-spacing: 4px;
-    text-align: center;
-    margin: 50px;
-    background-color: transparent;
-  }
-
-  .fhero img {
-    height: auto;
-    object-fit: cover;
-    width: 100%;
-  }
+    .line_up_tamplate{
+display: grid;
+grid-template-columns: 1fr 1fr 1fr;
+gap: 20px;
+margin: 10px;
+    }
 </style>
+
+<script>
+
+</script>
