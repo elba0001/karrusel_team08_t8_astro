@@ -10,7 +10,7 @@ import MainLayout from "../layouts/MainLayout.astro";
 				<div class="breadcrumbs">
 					<a href="index">Home </a> 
 					<p> // </p>
-					<a href="category"> Program</a> 
+					<a class="current_page" href="category"> Program</a> 
 				</div>
 			</article>
 
@@ -39,6 +39,10 @@ import MainLayout from "../layouts/MainLayout.astro";
 			.lineup_grid{
 				display: grid;
 				grid-template-rows: 1fr 1fr 1fr;
+			}
+
+			.current_page{
+				text-decoration: underline;
 			}
 
 			.breadcrumbs a{
