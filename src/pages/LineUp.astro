@@ -1,0 +1,40 @@
+---
+
+import MainLayout from "../layouts/MainLayout.astro";
+import Card from "../components/Card.astro";
+const {title}= Astro.props;
+
+const data = await fetch("https://ivntphfelhbgpplipcud.supabase.co/rest/v1/karrusel", {
+	method:"GET",
+	headers:{
+		apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Iml2bnRwaGZlbGhiZ3BwbGlwY3VkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTA0ODk1NjUsImV4cCI6MjAyNjA2NTU2NX0.q9LR1CQLCXBYH2D9hp0g8m5bMSd8b3jofWD6aL0lq6o"
+	},
+}
+).then(res=>res.json());
+
+console.log(data);
+---
+
+
+<MainLayout>
+	<section class="grid_cards">
+	{
+		data.map(artist=>{
+			return <Card data="artist"/>
+		}
+		)
+	}
+	</section>
+</MainLayout>
+
+<style>
+.grid_cards{
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 20px;
+}
+.heder_img{
+    width: 100%;
+    height: auto;
+}
+</style>
