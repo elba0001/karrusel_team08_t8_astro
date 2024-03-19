@@ -2,12 +2,61 @@
 import "../style/mutual.css";
 import Card from "../components/Card.astro";
 import Buttons from "../components/Buttons.astro"
-import MainLayout from "../layouts/MainLayout.astro"
+import Navigation from "../components/Navigation.astro"
+import Footer from "../components/Footer.astro"
+
 ---
 
-<MainLayout>
-	
-</MainLayout>
+<Navigation/>
+    <div class="index_img">
+	    <h1>KARRUSEL</h1>
+    </div>
+
+    <div class="index_flex">
+        <div>
+    <img src="img/index_img1.png" alt="#">
+    <a href="all_lineup"><Buttons variant="primary">SEE LINEUP</Buttons></a>
+</div>
+
+<div>
+    <img src="img/index_img2.png" alt="#">
+    <Buttons variant="primary">ABOUT US</Buttons>
+</div>
+
+<div>
+    <img src="img/index_img3.png" alt="#">
+    <Buttons variant="primary">GALLERY</Buttons>
+</div>
+</div>
+
+<Footer/>
+
 
 	
+<style>
+    .index_img{
+        height: 100vh;
+        background-image: url(img/index.png);
+        margin-bottom: 60px;
+    }
+    h1{
+        position: absolute;
+        top: 100%; 
+        left: 30%;   }
 
+        img{
+            width: 90%;
+            justify-self: center;
+            margin: 20px 0;
+        }
+
+        .index_flex{
+            display: flex;
+            justify-content: center;
+        }
+
+        .Buttons{
+            justify-self: center;
+        }
+
+</style>
