@@ -12,7 +12,63 @@ import "../style/mutual.css";
 		<title>Karrusel Festival</title>
 	</head>
 
-	<body>
+	<header></header>
+	<slot>
+		<article>
+			<!-- Skal brødkrummestien være en Navigation-komponent? -->
+			<div class="breadcrumbs">
+				<a href="index">Home</a> //
+				<a href="category">Program</a> //
+				<a href="line_up_thursday">Thursday</a> //
+				<a href="">Âme</a>
+			</div>
+		</article>
 		
-	</body>
+ 		<div class="txt_img">
+			<article class="hero">
+   			 <img src="/public/img/ame.webp" alt="artistbillede">
+   			 <h1>Âme</h1>
+		</article>
+			<article class="info1_2">
+			<div class="info1">
+				<h2>Location</h2>
+				<h2>Date</h2>
+				<h2>Time</h2>
+			</div>
+			<div class="info2">
+				<h2>Manegen</h2>
+				<h2>Thursday // 24th Aug</h2>
+				<h2>PM 19:30-20:30</h2>
+			</div>
+		</article>
+		
+		<article>
+			<div class="artistinfo">
+				<p> German house/techno duo consisting of Kristian Beyer and Frank Wiedemann.
+				The duo started making tracks in 2001. 
+				Beyer and Wiedemann first met in 2000 in Beyer's record shop in their hometown of Karlsruhe. 
+				As they both liked Chicago house and Detroit techno, they started to produce music together. Âme has released music for record labels such as Ostgut Ton and Sonar Kollektiv.
+				</p>
+			</div>
+		</article>
+
+		</div>
+
+	</slot>
 </html>
+
+<style>
+	.info1_2{
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		padding-bottom: 4%;
+	}
+
+	@media (min-width:800px){
+		.txt_img{
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+		}
+
+	}
+</style>

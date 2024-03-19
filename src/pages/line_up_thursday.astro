@@ -1,17 +1,10 @@
 ---
 import "../style/mutual.css";
-
+import LineUpLayout from "../layouts/LineUpLayout.astro";
+import Card from "../components/Card.astro";
+const {title}= Astro.props;
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="robots" content="noindex,nofollow" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Karrusel Festival</title>
-	</head>
-	<body>
-		
-	</body>
-</html>
+<LineUpLayout title="Line up thursday">
+
+</LineUpLayout>
