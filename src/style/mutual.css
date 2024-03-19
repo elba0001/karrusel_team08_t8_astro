@@ -59,6 +59,17 @@
     text-decoration: underline;
   }
 
+  .breadcrumbs a {
+    color: var(--main-white-color);
+  }
+  .breadcrumbs {
+    display: flex;
+  }
+
+  .current_page {
+    text-decoration: underline;
+  }
+
   /* desktop og tablets */
 
   @media only screen and (min-width: 600px) {
