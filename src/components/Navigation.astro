@@ -1,3 +1,149 @@
 ---
-const {variant,size} = Astro.props;
+
 ---
+
+<header>
+    <div class="logo">
+      <a href="/">
+        <img src="logo.png" alt="Logo" />
+      </a>
+    </div>
+    <nav>
+      <ul class="menu">
+        <li><a href="#">Buy ticket</a></li>
+        <li><a href="category">Program</a></li>
+        <li><a href="#">Map</a></li>
+        <li><a href="#">Gallery</a></li>
+        <li><a href="#">About us</a></li>
+      </ul>
+      <div class="burger">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+    </nav>
+  </header>
+
+  <style>
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.logo img {
+  width: 50px;
+  height: 50px;
+  background-image: url(public/img/white_logo.svg);
+}
+
+nav {
+  display: flex;
+  align-items: center;
+}
+
+.menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  margin-right: 20px;
+  background-color: #ee0fb7;
+}
+
+a{
+  background-color: #ee0fb7;
+  text-decoration: none;
+  color: white;
+}
+
+.menu li:last-child {
+  margin-right: 0;
+}
+
+
+.burger {
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.burger .line {
+  width: 100%;
+  height: 2px;
+  background-color: #f8f2f2;
+  margin-bottom: 5px;
+  transition: 0.2s linear;
+  order: 1;
+}
+
+
+  .menu {
+    display: none;
+  }
+ 
+  .burger.active .line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+    transition: 0.2s linear;
+    
+  }
+
+  .burger.active .line:nth-child(2) {
+    opacity: 0;
+    transition: 0.15s linear;
+   
+
+  }
+
+  .burger.active .line:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+    transition: 0.2s linear;
+   
+
+  }
+
+  nav.active .menu {
+    display: block;
+    background-color: #ee0fb7;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    order: 6;
+    position: absolute;
+  }
+
+  nav.active .menu li {
+    margin: 10px 20px;
+  }
+
+  nav.active .menu a {
+    font-size: 24px;
+  }
+
+
+  </style>
+
+  <script>
+    const burger = document.querySelector(".burger");
+const nav = document.querySelector("nav");
+const menu = document.querySelector(".menu");
+const links = document.querySelectorAll(".menu li a");
+
+burger.addEventListener("click", () => {
+  burger.classList.toggle("active");
+  nav.classList.toggle("active");
+});
+
+links.forEach((link) => {
+  link.addEventListener("click", () => {
+    burger.classList.remove("active");
+    nav.classList.remove("active");
+  });
+});
+
+  </script>

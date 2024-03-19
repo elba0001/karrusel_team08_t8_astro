@@ -1,3 +1,62 @@
----
+  <footer>
+        <h3>Join our mailing list!</h3>
+        <form>
+            <input type="email" placeholder="Enter Email" name="email" required>
+            <button type="submit">
+                <img class="arrow" src="arrow.svg" alt="arrow submit button">
+            </button>
+        </form>
+        <section class="socialmedia">
+            <h3>Follow us</h3>
+            <div class="ikoner">
+                <a class="instagram" href="https://www.instagram.com/karruselfest"> <img src="instagram.svg"
+                        alt="link til karrusel instagram"></a>
+                <a class="facebook" href="https://www.facebook.com/karruselfest"> <img src="facebook.svg"
+                        alt="link til karrusel facebook"></a>
+            </div>
+            <h4>Refshalevej 193, 1432 Copenhagen </h4>
+            <h4> 22-24 August</h4>
+        </section>
+    </footer>
 
----
+
+<style>
+    footer {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
+    form {
+        margin: auto;
+    }
+    img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+    input {
+        width: 200px;
+        height: 40px;
+        border-style: none;
+    }
+    button {
+        border-style: none;
+        background-color: transparent;
+    }
+    .arrow {
+        margin: -37% -9%;
+        width: 25px;
+    }
+    .ikoner {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        align-items: center;
+        padding-top: 2px;
+        font-size: 20px;
+
+    }
+    .ikoner img {
+        width: 31px;
+    }
+</style>
