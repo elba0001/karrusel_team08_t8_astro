@@ -17,17 +17,17 @@ import MainLayout from "../layouts/MainLayout.astro";
 			<div class="lineup_grid">
 
 			<div class="thursday_lineup">
-				<img src="img/lineup1.webp" alt="">
+				<img src="/img/lineup1.webp" alt="">
 				<h2>THURSDAY</h2>
 				<a href="LineUp"><Buttons variant="primary">LINE UP</Buttons></a>
 			</div>
 			<div class="friday_lineup">
-				<img src="img/lineup2.webp" alt="">
+				<img src="/img/lineup2.webp" alt="">
 				<h2>FRIDAY</h2>
 				<Buttons variant="primary">LINE UP</Buttons>
 			</div>
 			<div class="saturday_lineup">
-				<img src="img/lineup3.webp" alt="">
+				<img src="/img/lineup3.webp" alt="">
 				<h2>SATURDAY</h2>
 				<Buttons variant="primary">LINE UP</Buttons>
 			</div>
@@ -39,6 +39,14 @@ import MainLayout from "../layouts/MainLayout.astro";
 			.lineup_grid{
 				display: grid;
 				grid-template-rows: 1fr 1fr 1fr;
+			}
+
+			.current_page{
+				text-decoration: underline;
+			}
+
+			.current_page{
+				text-decoration: underline;
 			}
 
 			
