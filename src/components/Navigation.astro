@@ -10,11 +10,14 @@
     </div>
     <nav>
       <ul class="menu">
-        <li><a href="#">Buy ticket</a></li>
-        <li><a href="all_lineup">Line Up</a></li>
-        <li><a href="#">Map</a></li>
-        <li><a href="#">Gallery</a></li>
-        <li><a href="#">About us</a></li>
+        <div class="ticket">
+        <li><a href="#">BUY TICKET</a></li>
+        <a href="#"><img src="/img/ticket.svg" alt="ticket" /></a></div>
+        
+        <li><a href="all_lineup">LINEUP</a></li>
+        <li><a href="#">MAP</a></li>
+        <li><a href="#">GALLERY</a></li>
+        <li><a href="#">ABOUT US</a></li>
       </ul>
       <div class="burger">
         <div class="line"></div>
@@ -34,7 +37,10 @@ header {
 
 .logo img {
   width: 40%;
-  
+}
+
+img, .ticket {
+width: 30%;
 }
 
 nav {
@@ -122,7 +128,10 @@ a{
 
   nav.active .menu a {
     font-size: 24px;
+    font-family: "Rye", serif;
   }
+
+ 
 
 
   </style>
