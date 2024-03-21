@@ -1,8 +1,27 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro"
+export async function getStaticPaths(){
+	const url = "https://ivntphfelhbgpplipcud.supabase.co/rest/v1/karrusel"
+
+	const options = {
+		headers: {
+			apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Iml2bnRwaGZlbGhiZ3BwbGlwY3VkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTA0ODk1NjUsImV4cCI6MjAyNjA2NTU2NX0.q9LR1CQLCXBYH2D9hp0g8m5bMSd8b3jofWD6aL0lq6o"
+		}
+	};
+
+	const data = await fetch(url, options).then(response => response.json());
+	return{
+		params:{slug: ret.slug},
+		props: {ret},
+	};
+};
+const {ret} = Astro.props;
+console.log(ret);
+
 ---
 
 <MainLayout>
+
 
 	<div class="alt">
 		<div class="img">
