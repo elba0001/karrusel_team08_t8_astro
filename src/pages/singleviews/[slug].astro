@@ -16,18 +16,18 @@ export async function getStaticPaths(){
 		props:{artist}
 	}));
 };
-const {data} = Astro.props;
-console.log(data);
+const {artist} = Astro.props;
+console.log(artist);
 
 ---
 
-<MainLayout title={data.Artist}>
+<MainLayout title={artist.Artist}>
 
 
 	<div class="alt">
 		<div class="img">
 			<article class="hero">
-				<img src={data.img} alt="artistbillede">
+				<img src={"/img/"+artist.img} alt="artistbillede">
 		</article>
 		 </div>
 		 <div class="txt">
@@ -38,9 +38,9 @@ console.log(data);
 					<h2>Time</h2>
 				</div>
 				<div class="info2">
-					<h2>{data.Stage}</h2>
-					<h2>{data.Day}</h2>
-					<h2>{data.Timeslot}</h2>
+					<h2>{artist.Stage}</h2>
+					<h2>{artist.Day}</h2>
+					<h2>{artist.Timeslot}</h2>
 					
 				</div>
 			</article>
