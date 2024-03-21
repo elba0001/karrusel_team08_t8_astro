@@ -2,23 +2,29 @@
 import Buttons from "./Buttons.astro";
 
 const {data} = Astro.props;
+console.log(data);
 ---
 
 
-    <article>
-<a href="single_view">
+ <article>
+  <a href={"/singleviews/"+ data.slug}>
+
     <div class="img_artist_lineup">
       <slot>
-        <img class="artist_img" src={data.img} alt="#">
+        <img class="artist_img" src=`img/${data.img}` alt="#">
       </slot>
     </div>
+
 <h2 class="name">{data.Artist}</h2>
-<h3 class="info">Kl: {data.Timeslot}</h3>
-<h3>{data.Date}</h3>
-<h3>{data.Day}</h3>
-<Buttons variant="secondary"></Buttons>
+<h3 class="info">{data.Timeslot}</h3>
+<h3>{data.Day} // {data.Date}</h3>
+
+
+
+<Buttons variant="secondary" size="small">Read more!</Buttons>
+
 </a>
-    </article>
+</article>
 
 <style>
     .line_up_tamplate{

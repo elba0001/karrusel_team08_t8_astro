@@ -1,13 +1,33 @@
 ---
-import MainLayout from "../layouts/MainLayout.astro"
+import MainLayout from "../../layouts/MainLayout.astro"
+
+export async function getStaticPaths(){
+	const url = "https://ivntphfelhbgpplipcud.supabase.co/rest/v1/karrusel"
+
+	const options = {
+		headers: {
+			apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Iml2bnRwaGZlbGhiZ3BwbGlwY3VkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTA0ODk1NjUsImV4cCI6MjAyNjA2NTU2NX0.q9LR1CQLCXBYH2D9hp0g8m5bMSd8b3jofWD6aL0lq6o"
+		}
+	};
+
+	const data = await fetch(url, options).then(response => response.json());
+	return data.map(artist=>({
+		params:{slug: artist.slug},
+		props:{artist}
+	}));
+};
+const {artist} = Astro.props;
+console.log(artist);
+
 ---
 
-<MainLayout>
+<MainLayout title={artist.Artist}>
+
 
 	<div class="alt">
 		<div class="img">
 			<article class="hero">
-				<img src="/public/img/ame.webp" alt="artistbillede">
+				<img src={"/img/"+artist.img} alt="artistbillede">
 		</article>
 		 </div>
 		 <div class="txt">
@@ -18,12 +38,13 @@ import MainLayout from "../layouts/MainLayout.astro"
 					<h2>Time</h2>
 				</div>
 				<div class="info2">
-					<h2>Manegen</h2>
-					<h2>Thursday // 24th Aug</h2>
-					<h2>PM 19:30-20:30</h2>
+					<h2>{artist.Stage}</h2>
+					<h2>{artist.Day}</h2>
+					<h2>{artist.Timeslot}</h2>
+					
 				</div>
 			</article>
-			
+			<!-- artistinfo mangler data -->
 			<article>
 				<div class="artistinfo">
 					<p> German house/techno duo consisting of Kristian Beyer and Frank Wiedemann.
