@@ -63,10 +63,11 @@ import MainLayout from "../layouts/MainLayout.astro";
         background-size: cover;
         margin-bottom: 60px;
         background-repeat: no-repeat;
+       
     }
     h1{
         position: absolute;
-        top: 95%; 
+        top: 80%; 
         left: 30%; 
       }
 
@@ -76,18 +77,59 @@ import MainLayout from "../layouts/MainLayout.astro";
             margin: 20px 0;
         }
 
-        .index_flex{
+.index_flex{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+        .index_flex2{
+            width: 60%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        
+
+  /* desktop */
+  @media only screen and (min-width: 800px) {
+    .index_flex{
             display: flex;
             justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            margin: 10%;
         }
 
         .index_flex2 {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center; /* Add this line to center items horizontally */
-    text-align: center; /* Add this line to center text horizontally */
-}
+    align-items: center;
+    text-align: center; 
+    margin: 0 5%;
+        }  
+
+        .index_img{
+        height:100vh;
+        background-image: url(/public/img/index_imgdesktop.png);
+        background-size: cover;
+        margin-bottom: 60px;
+        background-repeat: no-repeat;
+       
+    }
+    h1{
+        position: absolute;
+        top: 90%;
+        left: 40%;
+      }
+
+}  
+
+
 
         
 
