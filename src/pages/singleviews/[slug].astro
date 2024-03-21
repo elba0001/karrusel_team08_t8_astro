@@ -1,5 +1,6 @@
 ---
-import MainLayout from "../layouts/MainLayout.astro"
+import MainLayout from "../../layouts/MainLayout.astro"
+
 export async function getStaticPaths(){
 	const url = "https://ivntphfelhbgpplipcud.supabase.co/rest/v1/karrusel"
 
@@ -10,23 +11,23 @@ export async function getStaticPaths(){
 	};
 
 	const data = await fetch(url, options).then(response => response.json());
-	return{
-		params:{slug: ret.slug},
-		props: {ret},
-	};
+	return data.map(artist=>({
+		params:{slug: artist.slug},
+		props:{artist}
+	}));
 };
-const {ret} = Astro.props;
-console.log(ret);
+const {data} = Astro.props;
+console.log(data);
 
 ---
 
-<MainLayout>
+<MainLayout title={data.Artist}>
 
 
 	<div class="alt">
 		<div class="img">
 			<article class="hero">
-				<img src="/public/img/ame.webp" alt="artistbillede">
+				<img src={data.img} alt="artistbillede">
 		</article>
 		 </div>
 		 <div class="txt">
@@ -37,9 +38,10 @@ console.log(ret);
 					<h2>Time</h2>
 				</div>
 				<div class="info2">
-					<h2>Manegen</h2>
-					<h2>Thursday // 24th Aug</h2>
-					<h2>PM 19:30-20:30</h2>
+					<h2>{data.Stage}</h2>
+					<h2>{data.Day}</h2>
+					<h2>{data.Timeslot}</h2>
+					
 				</div>
 			</article>
 			
