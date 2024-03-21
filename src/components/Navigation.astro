@@ -10,14 +10,31 @@
     </div>
     <nav>
       <ul class="menu">
-        <div class="ticket">
-        <li><a href="#">BUY TICKET</a></li>
-        <a href="https://www.ticketmaster.dk/event/542817"><img src="/img/ticket.svg" alt="ticket" /></a></div>
+        <li>
+          <a href="https://www.ticketmaster.dk/event/542817" class="buy-ticket-link">
+              BUY TICKET
+              <img src="/img/ticket.svg" alt="ticket" />
+          </a>
+      </li>
         
         <li><a href="all_lineup">LINEUP</a></li>
+        <li class="days"><a href="#">Thursday</a></li>
+        <li class="days"><a href="#">Friday</a></li>
+        <li class="days"><a href="#">Saturday</a></li>
+
         <li><a href="#">MAP</a></li>
+          <li class="overview"><a href="#">Scenes</a></li>
+          <li class="overview"><a href="#">Drinks</a></li>
+          <li class="overview"><a href="#">Food</a></li>
+          <li class="overview"><a href="#">Toilets</a></li>
+      
         <li><a href="#">GALLERY</a></li>
+
         <li><a href="#">ABOUT US</a></li>
+          <li class="about"><a href="#">Find us</a></li>
+          <li class="about"><a href="#">Festival Experience</a></li>
+          <li class="about"><a href="#">Sustainability</a></li>
+          <li class="about"><a href="#">History</a></li>
       </ul>
 
       <div class="burger">
@@ -27,6 +44,8 @@
       </div>
     </nav>
   </header>
+
+
 
   <style>
 header {
@@ -40,9 +59,24 @@ header {
   width: 40%;
 }
 
-img, .ticket {
-width: 30%;
+.menu li {
+    display: flex;
+    align-items: center;
+    font-size: 31px;
+    font-family: "Rye", serif;
 }
+
+.buy-ticket-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    width: 100%; 
+}
+
+.buy-ticket-link img {
+    width: 70px;
+}
+
 
 nav {
   display: flex;
@@ -127,12 +161,20 @@ a{
     margin: 10px 20px;
   }
 
-  nav.active .menu a {
-    font-size: 24px;
-    font-family: "Rye", serif;
-  }
+  .menu .days,
+.menu .overview,
+.menu .about {
+  font-family: Times New Roman, serif; 
+  font-size: 20px;
+}
 
- 
+
+  @media (min-width: 700px) {
+    /* større skærme som fx desktop */
+    .buy-ticket-link img {
+        width: 70px; 
+    }
+}
 
 
   </style>
