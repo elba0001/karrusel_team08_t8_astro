@@ -7,43 +7,68 @@ import Footer from "../components/Footer.astro"
 import MainLayout from "../layouts/MainLayout.astro";
 
 ---
+<head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="robots" content="noindex,nofollow" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Rye&display=swap" rel="stylesheet">
 
-<MainLayout>
+</head>
+
+<body>
     <div class="index_img">
-	    <h1>KARRUSEL</h1>
-    </div>
-
+    <header>
+        <Navigation />
+    </header>
+    
+    <main>
+       
+            <h1>KARRUSEL</h1>
+        </div>
+    
     <div class="index_flex">
-        <div>
-    <img src="/public/img/index_img1" alt="#">
-    <a href="all_lineup"><Buttons variant="primary">SEE LINEUP</Buttons></a>
-</div>
+    
+        <div class="index_flex2">
+        <img src="/img/index_img1.png" alt="#">
+        <a href="all_lineup"><Buttons variant="primary">SEE LINEUP</Buttons></a>
+        </div>
+    
+        <div class="index_flex2">
+        <img src="/img/index_img2.png" alt="#">
+        <Buttons variant="primary">ABOUT US</Buttons>
+        </div>
+    
+        <div class="index_flex2">
+        <img src="img/index_img3.png" alt="#">
+        <Buttons variant="primary">GALLERY</Buttons>
+        </div>
+    
+    </div>
+    </main>
+    
+    <footer>
+        <Footer/>
+    </footer>
 
-<div>
-    <img src="/public/img/index_img2" alt="#">
-    <Buttons variant="primary">ABOUT US</Buttons>
-</div>
-
-<div>
-    <img src="/public/img/index_img3" alt="#">
-    <Buttons variant="primary">GALLERY</Buttons>
-</div>
-</div>
-
-</MainLayout>
+</body>
 
 
-	
 <style>
     .index_img{
-        height: 100vh;
+        height:100vh;
         background-image: url(/public/img/index.png);
+        background-size: cover;
         margin-bottom: 60px;
+        background-repeat: no-repeat;
     }
     h1{
         position: absolute;
-        top: 100%; 
-        left: 30%;   }
+        top: 95%; 
+        left: 30%; 
+      }
 
         img{
             width: 90%;
@@ -56,8 +81,14 @@ import MainLayout from "../layouts/MainLayout.astro";
             justify-content: center;
         }
 
-        .Buttons{
-            justify-self: center;
-        }
+        .index_flex2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* Add this line to center items horizontally */
+    text-align: center; /* Add this line to center text horizontally */
+}
+
+        
 
 </style>
