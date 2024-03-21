@@ -16,9 +16,10 @@ export async function getStaticPaths(){
 	};
 };
 const {ret} = Astro.props;
+console.log(ret);
 ---
 
-<MainLayout>
+<MainLayout title={ret.Artist}>
 
 	<div class="alt">
 		<div class="img">
