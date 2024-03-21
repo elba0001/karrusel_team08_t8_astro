@@ -1,0 +1,80 @@
+---
+import MainLayout from "../layouts/MainLayout.astro"
+export async function getStaticPaths(){
+	const url = ""
+
+	const options = {
+		headers: {
+			apikey: ""
+		}
+	};
+
+	const data = await fetch(url, options).then(response => response.json());
+	return{
+		params:{slug: ret.slug},
+		props: {ret},
+	};
+};
+const {ret} = Astro.props;
+---
+
+<MainLayout>
+
+	<div class="alt">
+		<div class="img">
+			<article class="hero">
+				<img src="/public/img/ame.webp" alt="artistbillede">
+		</article>
+		 </div>
+		 <div class="txt">
+			<article class="info1_2">
+				<div class="info1">
+					<h2>Location</h2>
+					<h2>Date</h2>
+					<h2>Time</h2>
+				</div>
+				<div class="info2">
+					<h2>Manegen</h2>
+					<h2>Thursday // 24th Aug</h2>
+					<h2>PM 19:30-20:30</h2>
+				</div>
+			</article>
+			
+			<article>
+				<div class="artistinfo">
+					<p> German house/techno duo consisting of Kristian Beyer and Frank Wiedemann.
+					The duo started making tracks in 2001. 
+					Beyer and Wiedemann first met in 2000 in Beyer's record shop in their hometown of Karlsruhe. 
+					As they both liked Chicago house and Detroit techno, they started to produce music together. Âme has released music for record labels such as Ostgut Ton and Sonar Kollektiv.
+					</p>
+				</div>
+			</article>
+		 </div>	 
+	</div>
+ 
+
+	
+</MainLayout>
+
+
+<style>
+	.info1_2{
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		padding-bottom: 4%;
+		padding-top: 4%;
+	}
+	.artistinfo{
+		padding-top: 5%;
+		padding-bottom: 15%;
+	}
+
+	@media (min-width:800px){
+		.alt{
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			padding-bottom: 10%;
+			gap: 2%;
+		}
+	}
+</style>

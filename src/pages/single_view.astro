@@ -1,6 +1,21 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro"
+export async function getStaticPaths(){
+	const url = ""
 
+	const options = {
+		headers: {
+			apikey: ""
+		}
+	};
+
+	const data = await fetch(url, options).then(response => response.json());
+	return{
+		params:{slug: ret.slug},
+		props: {ret},
+	};
+};
+const {ret} = Astro.props;
 ---
 
 <MainLayout>
